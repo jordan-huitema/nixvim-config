@@ -58,7 +58,7 @@ in {
       clipboard = {
         providers = {
           wl-copy.enable = true; # For Wayland
-          xsel.enable = true; # For X11
+          #xsel.enable = true; # For X11
         };
       register = "unnamedplus"; # Sync clipboard between OS and Neovim
       };
@@ -170,6 +170,24 @@ in {
     ];
 
     plugins = {
+      render-markdown = {
+        enable = true;
+      };
+      lsp = {
+        enable = true;
+        servers = {
+            bashls.enable = true;
+            html.enable = true;
+            htmx.enable = true;
+            clangd.enable = true;
+            cmake.enable = true;
+            rust_analyzer.enable = true;
+          };
+      };
+      # https://github.com/lukas-reineke/lsp-format.nvim/
+      lsp-format = {
+        enable = true;
+      };
       # Adds icons for plugins to utilize in ui
       web-devicons.enable = true;
       # Detect tabstop and shiftwidth automatically
